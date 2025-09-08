@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Practical Q&A: Real-World Cybersecurity Scenarios for High School Students">
+    <meta name="keywords" content="cybersecurity, Q&A, practical scenarios, online safety, high school education">
+    <meta name="author" content="Olabayo Olawuni">
+    <title>Practical Q&A - Cybersecurity Scenarios</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .scenario-card {
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .scenario-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .scenario-card.safe {
+            border-color: #2ed573;
+        }
+
+        .scenario-card.danger {
+            border-color: #ff4757;
+        }
+
+        .answer-reveal {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            border-left: 4px solid #FFD700;
+        }
+
+        .answer-reveal h4 {
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .answer-reveal ul {
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        .answer-reveal li {
+            margin: 8px 0;
+        }
+
+        .reveal-btn {
+            background: #667eea;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background 0.3s ease;
+        }
+
+        .reveal-btn:hover {
+            background: #5a67d8;
+        }
+
+        .key-takeaways {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .takeaways-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .takeaway-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .takeaway-item h4 {
+            color: #FFD700;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .takeaways-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎯 Practical Q&A</h1>
+            <p>Real-World Cybersecurity Scenarios</p>
+        </header>
+
+        <a href="index.html" class="back-button">← Back to Main Presentation</a>
+
+        <div class="card">
+            <h2>🛡️ Real-Life Cybersecurity Questions</h2>
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #9b59b6;">
+                <h3>📢 About This Resource</h3>
+                <p style="text-align: left; line-height: 1.8;">
+                    <strong>"Now let's apply what we've learned to real situations you might encounter. These are actual scenarios that have happened to real people - some with happy endings, others with costly lessons."</strong>
+                </p>
+                <p style="text-align: left; line-height: 1.8;">
+                    <strong>"Click on each scenario to reveal the analysis and the correct response. Think like a cybersecurity expert!"</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- Scenario 1: Instagram Giveaway -->
+        <div class="card">
+            <h3>💰 Instagram Giveaway Scam</h3>
+            <div class="scenario-card">
+                <h4>Scenario:</h4>
+                <p>You see a post from "@NikeOfficial" saying: "WIN A FREE PAIR OF AIR JORDANS! Just DM us your email and we'll send you the entry form!"</p>
+                <h4>What do you do?</h4>
+                <button onclick="revealAnswer('giveaway')" class="reveal-btn">Reveal Answer</button>
+            </div>
+            <div id="giveaway-answer" class="answer-reveal">
+                <h4>🚨 DANGER! This is a scam!</h4>
+                <p><strong>Why it's suspicious:</strong></p>
+                <ul>
+                    <li>✅ Real companies don't ask for personal info via DM</li>
+                    <li>✅ Legitimate giveaways use official websites or apps</li>
+                    <li>✅ Check the account - is it verified? (blue checkmark)</li>
+                </ul>
+                <p><strong>Safe response:</strong> Visit nike.com directly or use their official app for legitimate giveaways.</p>
+            </div>
+        </div>
+
+        <!-- Scenario 2: Netflix Text -->
+        <div class="card">
+            <h3>📱 "Your Account is Suspended"</h3>
+            <div class="scenario-card">
+                <h4>Scenario:</h4>
+                <p>You get a text: "Your Netflix account has been suspended due to suspicious activity. Click here to verify: [suspicious-link]."</p>
+                <h4>What do you do?</h4>
+                <button onclick="revealAnswer('netflix')" class="reveal-btn">Reveal Answer</button>
+            </div>
+            <div id="netflix-answer" class="answer-reveal">
+                <h4>🚨 DANGER! Phishing attempt!</h4>
+                <p><strong>Why it's suspicious:</strong></p>
+                <ul>
+                    <li>✅ Netflix never sends account suspension texts</li>
+                    <li>✅ They communicate through their app/website only</li>
+                    <li>✅ URL is suspicious (hover to check)</li>
+                </ul>
+                <p><strong>Safe response:</strong> Open Netflix app directly and check your account status there.</p>
+            </div>
+        </div>
+
+        <!-- Scenario 3: Gaming Friend -->
+        <div class="card">
+            <h3>🎮 Gaming Friend Request</h3>
+            <div class="scenario-card">
+                <h4>Scenario:</h4>
+                <p>Someone adds you on Discord claiming to be a friend from your favorite game. They say: "Hey! Remember me from Fortnite? Let's team up!"</p>
+                <h4>What do you do?</h4>
+                <button onclick="revealAnswer('gaming')" class="reveal-btn">Reveal Answer</button>
+            </div>
+            <div id="gaming-answer" class="answer-reveal">
+                <h4>🤔 CAUTION! Could be legitimate, but verify first!</h4>
+                <p><strong>How to safely respond:</strong></p>
+                <ul>
+                    <li>✅ Ask specific questions only you and your real friend would know</li>
+                    <li>✅ Don't share personal information</li>
+                    <li>✅ If unsure, politely decline and suggest connecting through the game</li>
+                </ul>
+                <p><strong>Remember:</strong> Scammers often pretend to be gamers to build trust and ask for money or account details later.</p>
+            </div>
+        </div>
+
+        <!-- Scenario 4: Amazon Email -->
+        <div class="card">
+            <h3>📧 "Package Delivery Failed"</h3>
+            <div class="scenario-card">
+                <h4>Scenario:</h4>
+                <p>Email from "Amazon Delivery": "Your package couldn't be delivered. Pay $2.99 re-delivery fee here: [link]"</p>
+                <h4>What do you do?</h4>
+                <button onclick="revealAnswer('amazon')" class="reveal-btn">Reveal Answer</button>
+            </div>
+            <div id="amazon-answer" class="answer-reveal">
+                <h4>🚨 DANGER! Classic phishing scam!</h4>
+                <p><strong>Why it's suspicious:</strong></p>
+                <ul>
+                    <li>✅ Amazon never asks for payment via email links</li>
+                    <li>✅ Check sender email - real Amazon emails end in @amazon.com</li>
+                    <li>✅ Small amounts ($2.99) are used to lower suspicion</li>
+                </ul>
+                <p><strong>Safe response:</strong> Track your package through the official Amazon app or website.</p>
+            </div>
+        </div>
+
+        <!-- Scenario 5: Hack Claim -->
+        <div class="card">
+            <h3>📸 Social Media "Hack" Claim</h3>
+            <div class="scenario-card">
+                <h4>Scenario:</h4>
+                <p>Friend messages you: "OMG someone hacked my Instagram! Can you send me $50 for a new phone? I'll pay you back tomorrow!"</p>
+                <h4>What do you do?</h4>
+                <button onclick="revealAnswer('hack')" class="reveal-btn">Reveal Answer</button>
+            </div>
+            <div id="hack-answer" class="answer-reveal">
+                <h4>🚨 DANGER! Account takeover scam!</h4>
+                <p><strong>Why it's suspicious:</strong></p>
+                <ul>
+                    <li>✅ Real friends would call or use another method to verify</li>
+                    <li>✅ Scammers hack accounts and message friends for money</li>
+                    <li>✅ "Pay me back tomorrow" is a common promise</li>
+                </ul>
+                <p><strong>Safe response:</strong> Call your friend using their known phone number (not the one they messaged from) to verify.</p>
+            </div>
+        </div>
+
+        <!-- Scenario 6: Bank Update -->
+        <div class="card">
+            <h3>💳 "Security Update Required"</h3>
+            <div class="scenario-card">
+                <h4>Scenario:</h4>
+                <p>Bank app notification: "Security Update Required. Click here to update your information or your account will be locked."</p>
+                <h4>What do you do?</h4>
+                <button onclick="revealAnswer('bank')" class="reveal-btn">Reveal Answer</button>
+            </div>
+            <div id="bank-answer" class="answer-reveal">
+                <h4>🤔 CAUTION! Could be legitimate, but verify!</h4>
+                <p><strong>How to safely respond:</strong></p>
+                <ul>
+                    <li>✅ Open your bank app directly (don't click links)</li>
+                    <li>✅ Check for official notifications within the app</li>
+                    <li>✅ Call your bank using the number on your card (not from the message)</li>
+                </ul>
+                <p><strong>Remember:</strong> Real banks give you time to update information and never threaten immediate account closure.</p>
+            </div>
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="key-takeaways">
+            <h3>🧠 Key Takeaways</h3>
+            <div class="takeaways-grid">
+                <div class="takeaway-item">
+                    <h4>🔍 Always Verify</h4>
+                    <p>Never trust unsolicited messages. Verify through official channels.</p>
+                </div>
+                <div class="takeaway-item">
+                    <h4>⏰ Take Your Time</h4>
+                    <p>Urgent requests are red flags. Legitimate organizations give you time.</p>
+                </div>
+                <div class="takeaway-item">
+                    <h4>📞 Use Known Contacts</h4>
+                    <p>Contact people through verified methods, not the suspicious message.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer style="background: rgba(0,0,0,0.8); color: white; padding: 30px 0; margin-top: 50px; text-align: center; border-radius: 10px;">
+            <div class="container">
+                <p style="font-size: 0.9em; opacity: 0.8;">
+                    © 2025 TechLink Innovations. This educational resource is designed for cybersecurity awareness.
+                </p>
+                <p style="font-size: 0.8em; opacity: 0.6; margin-top: 10px;">
+                    Remember: Stay curious, stay safe, and think before you click! 🛡️
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function revealAnswer(scenarioId) {
+            const answerDiv = document.getElementById(scenarioId + '-answer');
+            const button = event.target;
+
+            if (answerDiv.style.display === 'none' || answerDiv.style.display === '') {
+                answerDiv.style.display = 'block';
+                answerDiv.classList.add('fade-in');
+                button.textContent = 'Hide Answer';
+                button.style.background = '#ff4757';
+            } else {
+                answerDiv.style.display = 'none';
+                answerDiv.classList.remove('fade-in');
+                button.textContent = 'Reveal Answer';
+                button.style.background = '#667eea';
+            }
+        }
+
+        // Add smooth scrolling and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add fade-in animation to cards when they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Initially hide cards and observe them
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

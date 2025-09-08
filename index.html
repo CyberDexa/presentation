@@ -439,6 +439,7 @@
             <button class="nav-btn" onclick="showSection('social-eng')">Social Engineering</button>
             <button class="nav-btn" onclick="showSection('fake-news')">Fake News</button>
             <button class="nav-btn" onclick="showSection('quiz')">Challenge Quiz</button>
+            <button class="nav-btn" onclick="showSection('practical-qa')">Practical Q&A</button>
             <button class="nav-btn" onclick="showSection('tips')">Protection Tips</button>
         </nav>
 
@@ -731,6 +732,170 @@
             </div>
         </section>
 
+        <!-- Practical Q&A Section -->
+        <section id="practical-qa" class="section">
+            <div class="card">
+                <h2>🎯 Practical Q&A: Real-World Scenarios</h2>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #9b59b6;">
+                    <h3>📢 Real-Life Cybersecurity Questions</h3>
+                    <div style="text-align: left; line-height: 1.8;">
+                        <p><strong>"Now let's apply what we've learned to real situations you might encounter. These are actual scenarios that have happened to real people - some with happy endings, others with costly lessons."</strong></p>
+                        
+                        <p><strong>"Click on each scenario to reveal the analysis and the correct response. Think like a cybersecurity expert!"</strong></p>
+                    </div>
+                </div>
+
+                <div class="demo-container">
+                    <div class="card">
+                        <h3>💰 Instagram Giveaway Scam</h3>
+                        <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <p><strong>Scenario:</strong> You see a post from "@NikeOfficial" saying: "WIN A FREE PAIR OF AIR JORDANS! Just DM us your email and we'll send you the entry form!"</p>
+                            <p><strong>What do you do?</strong></p>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <button onclick="revealAnswer('giveaway')" style="background: #667eea; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px;">Reveal Answer</button>
+                        </div>
+                        <div id="giveaway-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                            <h4 style="color: #FFD700;">🚨 DANGER! This is a scam!</h4>
+                            <p><strong>Why it's suspicious:</strong></p>
+                            <ul style="text-align: left; line-height: 1.6;">
+                                <li>✅ Real companies don't ask for personal info via DM</li>
+                                <li>✅ Legitimate giveaways use official websites or apps</li>
+                                <li>✅ Check the account - is it verified? (blue checkmark)</li>
+                            </ul>
+                            <p><strong>Safe response:</strong> Visit nike.com directly or use their official app for legitimate giveaways.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>📱 "Your Account is Suspended"</h3>
+                        <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <p><strong>Scenario:</strong> You get a text: "Your Netflix account has been suspended due to suspicious activity. Click here to verify: [suspicious-link]."</p>
+                            <p><strong>What do you do?</strong></p>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <button onclick="revealAnswer('netflix')" style="background: #667eea; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px;">Reveal Answer</button>
+                        </div>
+                        <div id="netflix-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                            <h4 style="color: #FFD700;">🚨 DANGER! Phishing attempt!</h4>
+                            <p><strong>Why it's suspicious:</strong></p>
+                            <ul style="text-align: left; line-height: 1.6;">
+                                <li>✅ Netflix never sends account suspension texts</li>
+                                <li>✅ They communicate through their app/website only</li>
+                                <li>✅ URL is suspicious (hover to check)</li>
+                            </ul>
+                            <p><strong>Safe response:</strong> Open Netflix app directly and check your account status there.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>🎮 Gaming Friend Request</h3>
+                        <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <p><strong>Scenario:</strong> Someone adds you on Discord claiming to be a friend from your favorite game. They say: "Hey! Remember me from Fortnite? Let's team up!"</p>
+                            <p><strong>What do you do?</strong></p>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <button onclick="revealAnswer('gaming')" style="background: #667eea; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px;">Reveal Answer</button>
+                        </div>
+                        <div id="gaming-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                            <h4 style="color: #FFD700;">🤔 CAUTION! Could be legitimate, but verify first!</h4>
+                            <p><strong>How to safely respond:</strong></p>
+                            <ul style="text-align: left; line-height: 1.6;">
+                                <li>✅ Ask specific questions only you and your real friend would know</li>
+                                <li>✅ Don't share personal information</li>
+                                <li>✅ If unsure, politely decline and suggest connecting through the game</li>
+                            </ul>
+                            <p><strong>Remember:</strong> Scammers often pretend to be gamers to build trust and ask for money or account details later.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>📧 "Package Delivery Failed"</h3>
+                        <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <p><strong>Scenario:</strong> Email from "Amazon Delivery": "Your package couldn't be delivered. Pay $2.99 re-delivery fee here: [link]"</p>
+                            <p><strong>What do you do?</strong></p>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <button onclick="revealAnswer('amazon')" style="background: #667eea; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px;">Reveal Answer</button>
+                        </div>
+                        <div id="amazon-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                            <h4 style="color: #FFD700;">🚨 DANGER! Classic phishing scam!</h4>
+                            <p><strong>Why it's suspicious:</strong></p>
+                            <ul style="text-align: left; line-height: 1.6;">
+                                <li>✅ Amazon never asks for payment via email links</li>
+                                <li>✅ Check sender email - real Amazon emails end in @amazon.com</li>
+                                <li>✅ Small amounts ($2.99) are used to lower suspicion</li>
+                            </ul>
+                            <p><strong>Safe response:</strong> Track your package through the official Amazon app or website.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>📸 Social Media "Hack" Claim</h3>
+                        <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <p><strong>Scenario:</strong> Friend messages you: "OMG someone hacked my Instagram! Can you send me $50 for a new phone? I'll pay you back tomorrow!"</p>
+                            <p><strong>What do you do?</strong></p>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <button onclick="revealAnswer('hack')" style="background: #667eea; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px;">Reveal Answer</button>
+                        </div>
+                        <div id="hack-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                            <h4 style="color: #FFD700;">🚨 DANGER! Account takeover scam!</h4>
+                            <p><strong>Why it's suspicious:</strong></p>
+                            <ul style="text-align: left; line-height: 1.6;">
+                                <li>✅ Real friends would call or use another method to verify</li>
+                                <li>✅ Scammers hack accounts and message friends for money</li>
+                                <li>✅ "Pay me back tomorrow" is a common promise</li>
+                            </ul>
+                            <p><strong>Safe response:</strong> Call your friend using their known phone number (not the one they messaged from) to verify.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>💳 "Security Update Required"</h3>
+                        <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <p><strong>Scenario:</strong> Bank app notification: "Security Update Required. Click here to update your information or your account will be locked."</p>
+                            <p><strong>What do you do?</strong></p>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <button onclick="revealAnswer('bank')" style="background: #667eea; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px;">Reveal Answer</button>
+                        </div>
+                        <div id="bank-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                            <h4 style="color: #FFD700;">🤔 CAUTION! Could be legitimate, but verify!</h4>
+                            <p><strong>How to safely respond:</strong></p>
+                            <ul style="text-align: left; line-height: 1.6;">
+                                <li>✅ Open your bank app directly (don't click links)</li>
+                                <li>✅ Check for official notifications within the app</li>
+                                <li>✅ Call your bank using the number on your card (not from the message)</li>
+                            </ul>
+                            <p><strong>Remember:</strong> Real banks give you time to update information and never threaten immediate account closure.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(90deg, #667eea, #764ba2); padding: 20px; border-radius: 10px; margin-top: 30px;">
+                    <h3 style="margin-bottom: 15px;">🧠 Key Takeaways</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                            <h4>🔍 Always Verify</h4>
+                            <p>Never trust unsolicited messages. Verify through official channels.</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                            <h4>⏰ Take Your Time</h4>
+                            <p>Urgent requests are red flags. Legitimate organizations give you time.</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                            <h4>📞 Use Known Contacts</h4>
+                            <p>Contact people through verified methods, not the suspicious message.</p>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="practical-qa.html" style="background: #FFD700; color: #333; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block;">📖 View Full Q&A Page</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Tips Section -->
         <section id="tips" class="section">
             <div class="card">
@@ -798,6 +963,7 @@
                 <div>
                     <h4 style="color: #FFD700; margin-bottom: 15px;">📚 Additional Resources</h4>
                     <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li><a href="practical-qa.html" style="color: #87CEEB; text-decoration: none;">🛡️ Practical Q&A Scenarios</a></li>
                         <li><a href="#" style="color: #87CEEB; text-decoration: none;">Cybersecurity Basics Guide</a></li>
                         <li><a href="#" style="color: #87CEEB; text-decoration: none;">Phishing Detection Tools</a></li>
                         <li><a href="#" style="color: #87CEEB; text-decoration: none;">Password Security Tips</a></li>
@@ -891,7 +1057,7 @@
         }
 
         function updateProgress() {
-            const sections = ['cover', 'intro', 'phishing', 'social-eng', 'fake-news', 'quiz', 'tips'];
+            const sections = ['cover', 'intro', 'phishing', 'social-eng', 'fake-news', 'quiz', 'practical-qa', 'tips'];
             const currentIndex = sections.indexOf(currentSection);
             const progress = ((currentIndex + 1) / sections.length) * 100;
             document.getElementById('progressFill').style.width = progress + '%';
@@ -1178,6 +1344,16 @@ Real banks will:
                     document.getElementById('finalScore').textContent = 
                         `Final Score: ${correctAnswers}/${totalQuestions} - ${correctAnswers === totalQuestions ? 'Perfect! 🏆' : 'Great effort! 👏'}`;
                 }, 1000);
+            }
+        }
+
+        function revealAnswer(scenarioId) {
+            const answerDiv = document.getElementById(scenarioId + '-answer');
+            if (answerDiv.style.display === 'none' || answerDiv.style.display === '') {
+                answerDiv.style.display = 'block';
+                answerDiv.style.animation = 'fadeIn 0.5s ease-in';
+            } else {
+                answerDiv.style.display = 'none';
             }
         }
 
